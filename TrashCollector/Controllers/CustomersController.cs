@@ -53,11 +53,14 @@ namespace TrashCollector.Controllers
                 
                 Schedule schedule = new Schedule();
                 Invoice invoice = new Invoice();
+                db.Schedules.Add(schedule);
+                db.Invoices.Add(invoice);
+
                 var theCustomer = customer;
 
                 theCustomer.InvoiceId = invoice.Id;
                 theCustomer.ScheduleId = schedule.Id;
-
+                
                 db.Customers.Add(theCustomer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
