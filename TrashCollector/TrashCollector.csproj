@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201807271941507_identitymodels.Designer.cs">
       <DependentUpon>201807271941507_identitymodels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807272042030_adding schedule and invoice id to customer.cs" />
+    <Compile Include="Migrations\201807272042030_adding schedule and invoice id to customer.Designer.cs">
+      <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -340,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807271941507_identitymodels.resx">
       <DependentUpon>201807271941507_identitymodels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807272042030_adding schedule and invoice id to customer.resx">
+      <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

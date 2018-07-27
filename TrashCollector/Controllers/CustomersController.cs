@@ -50,7 +50,15 @@ namespace TrashCollector.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                
+                Schedule schedule = new Schedule();
+                Invoice invoice = new Invoice();
+                var theCustomer = customer;
+
+                theCustomer.InvoiceId = invoice.Id;
+                theCustomer.ScheduleId = schedule.Id;
+
+                db.Customers.Add(theCustomer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
