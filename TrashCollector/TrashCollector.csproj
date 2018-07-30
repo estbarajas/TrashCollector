@@ -222,6 +222,26 @@
     <Compile Include="Migrations\201807272042030_adding schedule and invoice id to customer.Designer.cs">
       <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807301432186_adding customer info fk to users.cs" />
+    <Compile Include="Migrations\201807301432186_adding customer info fk to users.Designer.cs">
+      <DependentUpon>201807301432186_adding customer info fk to users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301444273_deletin stuff.cs" />
+    <Compile Include="Migrations\201807301444273_deletin stuff.Designer.cs">
+      <DependentUpon>201807301444273_deletin stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301447306_ok.cs" />
+    <Compile Include="Migrations\201807301447306_ok.Designer.cs">
+      <DependentUpon>201807301447306_ok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301458081_ok3.cs" />
+    <Compile Include="Migrations\201807301458081_ok3.Designer.cs">
+      <DependentUpon>201807301458081_ok3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807301543068_ok9.cs" />
+    <Compile Include="Migrations\201807301543068_ok9.Designer.cs">
+      <DependentUpon>201807301543068_ok9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -347,6 +367,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807272042030_adding schedule and invoice id to customer.resx">
       <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301432186_adding customer info fk to users.resx">
+      <DependentUpon>201807301432186_adding customer info fk to users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301444273_deletin stuff.resx">
+      <DependentUpon>201807301444273_deletin stuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301447306_ok.resx">
+      <DependentUpon>201807301447306_ok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301458081_ok3.resx">
+      <DependentUpon>201807301458081_ok3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807301543068_ok9.resx">
+      <DependentUpon>201807301543068_ok9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

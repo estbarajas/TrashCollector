@@ -7,8 +7,15 @@ using System.Web;
 
 namespace TrashCollector.Models
 {
-    public class Customer : Roles
+    public class Customer
     {
+        [Key]
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public int ZipCode { get; set; }
+
         [ForeignKey("Schedule")]
         [Display(Name = "Schedule Id")]
         public int ScheduleId { get; set; }
@@ -22,7 +29,10 @@ namespace TrashCollector.Models
         public int InvoiceId { get; set; }
         public Invoice Invoice { get; set; }
 
-
         public IEnumerable<Invoice> Invoices { get; set; }
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

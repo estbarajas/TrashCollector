@@ -7,7 +7,11 @@ using System.Web;
 
 namespace TrashCollector.Models
 {
-    public class Employee : Roles
+    public class Employee
     {
+        [Key, Column("EmployeeId")]
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

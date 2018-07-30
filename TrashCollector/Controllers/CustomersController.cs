@@ -48,9 +48,13 @@ namespace TrashCollector.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Password")] Customer customer)
         {
+
+            //var all = from c in db.Customers select c;
+            //db.Customers.RemoveRange(all);
+            //db.SaveChanges();
             if (ModelState.IsValid)
             {
-                
+
                 Schedule schedule = new Schedule();
                 Invoice invoice = new Invoice();
                 db.Schedules.Add(schedule);
@@ -60,13 +64,15 @@ namespace TrashCollector.Controllers
 
                 theCustomer.InvoiceId = invoice.Id;
                 theCustomer.ScheduleId = schedule.Id;
-                
+
+
                 db.Customers.Add(theCustomer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(customer);
+           // return View();
         }
 
         // GET: Customers/Edit/5
