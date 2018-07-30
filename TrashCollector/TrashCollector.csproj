@@ -195,52 +195,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807261549499_Initial.cs" />
-    <Compile Include="Migrations\201807261549499_Initial.Designer.cs">
-      <DependentUpon>201807261549499_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201807301634099_Initial2.cs" />
+    <Compile Include="Migrations\201807301634099_Initial2.Designer.cs">
+      <DependentUpon>201807301634099_Initial2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807271538260_drpdown.cs" />
-    <Compile Include="Migrations\201807271538260_drpdown.Designer.cs">
-      <DependentUpon>201807271538260_drpdown.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807271924220_creating schedule and invoice.cs" />
-    <Compile Include="Migrations\201807271924220_creating schedule and invoice.Designer.cs">
-      <DependentUpon>201807271924220_creating schedule and invoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807271941507_identitymodels.cs" />
-    <Compile Include="Migrations\201807271941507_identitymodels.Designer.cs">
-      <DependentUpon>201807271941507_identitymodels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807272042030_adding schedule and invoice id to customer.cs" />
-    <Compile Include="Migrations\201807272042030_adding schedule and invoice id to customer.Designer.cs">
-      <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301432186_adding customer info fk to users.cs" />
-    <Compile Include="Migrations\201807301432186_adding customer info fk to users.Designer.cs">
-      <DependentUpon>201807301432186_adding customer info fk to users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301444273_deletin stuff.cs" />
-    <Compile Include="Migrations\201807301444273_deletin stuff.Designer.cs">
-      <DependentUpon>201807301444273_deletin stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301447306_ok.cs" />
-    <Compile Include="Migrations\201807301447306_ok.Designer.cs">
-      <DependentUpon>201807301447306_ok.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301458081_ok3.cs" />
-    <Compile Include="Migrations\201807301458081_ok3.Designer.cs">
-      <DependentUpon>201807301458081_ok3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301543068_ok9.cs" />
-    <Compile Include="Migrations\201807301543068_ok9.Designer.cs">
-      <DependentUpon>201807301543068_ok9.cs</DependentUpon>
+    <Compile Include="Migrations\201807301652064_deleting customr controller.cs" />
+    <Compile Include="Migrations\201807301652064_deleting customr controller.Designer.cs">
+      <DependentUpon>201807301652064_deleting customr controller.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -315,16 +282,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Customers\Create.cshtml" />
-    <Content Include="Views\Customers\Delete.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Schedules\Create.cshtml" />
     <Content Include="Views\Schedules\Delete.cshtml" />
     <Content Include="Views\Schedules\Details.cshtml" />
@@ -335,6 +292,11 @@
     <Content Include="Views\Invoices\Details.cshtml" />
     <Content Include="Views\Invoices\Edit.cshtml" />
     <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,35 +315,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807261549499_Initial.resx">
-      <DependentUpon>201807261549499_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807301634099_Initial2.resx">
+      <DependentUpon>201807301634099_Initial2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807271538260_drpdown.resx">
-      <DependentUpon>201807271538260_drpdown.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807271924220_creating schedule and invoice.resx">
-      <DependentUpon>201807271924220_creating schedule and invoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807271941507_identitymodels.resx">
-      <DependentUpon>201807271941507_identitymodels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807272042030_adding schedule and invoice id to customer.resx">
-      <DependentUpon>201807272042030_adding schedule and invoice id to customer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301432186_adding customer info fk to users.resx">
-      <DependentUpon>201807301432186_adding customer info fk to users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301444273_deletin stuff.resx">
-      <DependentUpon>201807301444273_deletin stuff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301447306_ok.resx">
-      <DependentUpon>201807301447306_ok.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301458081_ok3.resx">
-      <DependentUpon>201807301458081_ok3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301543068_ok9.resx">
-      <DependentUpon>201807301543068_ok9.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807301652064_deleting customr controller.resx">
+      <DependentUpon>201807301652064_deleting customr controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

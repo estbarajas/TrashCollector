@@ -7,13 +7,13 @@ namespace TrashCollector.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class creatingscheduleandinvoice : IMigrationMetadata
+    public sealed partial class deletingcustomrcontroller : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(creatingscheduleandinvoice));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(deletingcustomrcontroller));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807271924220_creating schedule and invoice"; }
+            get { return "201807301652064_deleting customr controller"; }
         }
         
         string IMigrationMetadata.Source

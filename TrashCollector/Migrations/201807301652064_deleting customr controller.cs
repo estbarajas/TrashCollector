@@ -3,7 +3,7 @@ namespace TrashCollector.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class drpdown : DbMigration
+    public partial class deletingcustomrcontroller : DbMigration
     {
         public override void Up()
         {

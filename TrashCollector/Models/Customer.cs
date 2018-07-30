@@ -21,7 +21,6 @@ namespace TrashCollector.Models
         public int ScheduleId { get; set; }
         public Schedule Schedule { get; set; }
 
-
         public IEnumerable<Schedule> Schedules { get; set; }
 
         [ForeignKey("Invoice")]
