@@ -153,5 +153,25 @@ namespace TrashCollector2.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //GET
+        public ActionResult DateUpdate()
+        {
+            return View();
+        }
+
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DateUpdate([Bind(Include = "Id,NormalDayPickUp,ExtraDatePickUp")] Schedule schedule)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(schedule).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View("Create");
+        }
     }
 }
