@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace TrashCollector.Models
+namespace TrashCollector2.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -17,16 +16,10 @@ namespace TrashCollector.Models
             // Add custom user claims here
             return userIdentity;
         }
-        //public virtual Customer Customer { get; set; }
-        //public virtual Customer Customer { get; set; }
-        //public IEnumerable<Customer> customers { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -37,8 +30,10 @@ namespace TrashCollector.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Schedule> Schedules { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector2.Models.CustomerInfo> CustomerInfoes { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Invoice> Invoices { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector2.Models.Invoice> Invoices { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector2.Models.Schedule> Schedules { get; set; }
     }
 }

@@ -9,12 +9,16 @@ namespace TrashCollector.Models
 {
     public class Customer
     {
-        [Key]
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public int ZipCode { get; set; }
+        [Key, ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
+
+        //[Key]
+        //public int Id { get; set; }
+        //public string FirstName { get; set; }
+        //public string LastName { get; set; }
+        //public string Address { get; set; }
+        //public int ZipCode { get; set; }
 
         [ForeignKey("Schedule")]
         [Display(Name = "Schedule Id")]
@@ -30,8 +34,8 @@ namespace TrashCollector.Models
 
         public IEnumerable<Invoice> Invoices { get; set; }
 
-        [ForeignKey("User")]
-        public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        //[ForeignKey("User")]
+        //public string UserId { get; set; }
+        //public ApplicationUser User { get; set; }
     }
 }
