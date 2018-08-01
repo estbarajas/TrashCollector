@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -11,122 +10,120 @@ using TrashCollector2.Models;
 
 namespace TrashCollector2.Controllers
 {
-    public class SchedulesController : Controller
+    public class InvoicesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Schedules
+        // GET: Invoices
         public ActionResult Index()
         {
-            return View(db.Schedules.ToList());
+            return View(db.Invoices.ToList());
         }
 
-        // GET: Schedules/Details/5
+        // GET: Invoices/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Schedule schedule = db.Schedules.Find(id);
-            if (schedule == null)
+            Invoice invoice = db.Invoices.Find(id);
+            if (invoice == null)
             {
                 return HttpNotFound();
             }
-            return View(schedule);
+            return View(invoice);
         }
 
-        // GET: Schedules/Create
+        // GET: Invoices/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Schedules/Create
+        // POST: Invoices/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,NormalDayPickUp,ExtraDatePickUp")] Schedule schedule)
+        public ActionResult Create([Bind(Include = "Id,AmountDue,Status")] Invoice invoice)
         {
             if (ModelState.IsValid)
             {
-                db.Schedules.Add(schedule);
+                db.Invoices.Add(invoice);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(schedule);
+            return View(invoice);
         }
 
-        // GET: Schedules/Edit/5
+        // GET: Invoices/Edit/5
         public ActionResult Edit(int? id)
         {
-            string currentUserId = User.Identity.GetUserId();
-            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
 
 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Schedule schedule = db.Schedules.Find(id);
-            if (schedule == null)
+            Invoice invoice = db.Invoices.Find(id);
+            if (invoice == null)
             {
                 return HttpNotFound();
             }
-
-            
-            return View(schedule);
+            return View(invoice);
         }
 
-        // POST: Schedules/Edit/5
+        // POST: Invoices/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,NormalDayPickUp,ExtraDatePickUp,Start,End")] Schedule schedule)
+        public ActionResult Edit([Bind(Include = "Id,AmountDue,Status")] Invoice invoice)
         {
-            ApplicationDbContext database = new ApplicationDbContext();
-            var invoice = database.Invoices.Where(c => c.Id == schedule.Id).Select(c => c).Single();
+            //invoice.Status = "not paid";
+            ApplicationDbContext dbUsers = new ApplicationDbContext();
+            //dbUsers.Invoices.Where(i => i.Status )
 
+            //set a static value when customer is created and then here if extraday is not null then change from 50 (static) to 75
 
-            if (schedule.ExtraDatePickUp != null)
-            {
-                invoice.AmountDue = 75;
-            }
+            //if (invoice.Id == dbUsers.CustomerInfoes.Select(c => c.InvoiceId).Single())
+            //{
+
+            //} 
 
             if (ModelState.IsValid)
             {
-                db.Entry(schedule).State = EntityState.Modified;
+                db.Entry(invoice).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(schedule);
+            return View(invoice);
         }
 
-        // GET: Schedules/Delete/5
+        // GET: Invoices/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Schedule schedule = db.Schedules.Find(id);
-            if (schedule == null)
+            Invoice invoice = db.Invoices.Find(id);
+            if (invoice == null)
             {
                 return HttpNotFound();
             }
-            return View(schedule);
+            return View(invoice);
         }
 
-        // POST: Schedules/Delete/5
+        // POST: Invoices/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Schedule schedule = db.Schedules.Find(id);
-            db.Schedules.Remove(schedule);
+            Invoice invoice = db.Invoices.Find(id);
+            db.Invoices.Remove(invoice);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

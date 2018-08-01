@@ -197,6 +197,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,6 +218,18 @@
     <Compile Include="Migrations\201807302101553_mm.cs" />
     <Compile Include="Migrations\201807302101553_mm.Designer.cs">
       <DependentUpon>201807302101553_mm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011442530_start and end column.cs" />
+    <Compile Include="Migrations\201808011442530_start and end column.Designer.cs">
+      <DependentUpon>201808011442530_start and end column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011457133_deleting start and end.cs" />
+    <Compile Include="Migrations\201808011457133_deleting start and end.Designer.cs">
+      <DependentUpon>201808011457133_deleting start and end.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011502413_added start and end to schedule.cs" />
+    <Compile Include="Migrations\201808011502413_added start and end to schedule.Designer.cs">
+      <DependentUpon>201808011502413_added start and end to schedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,6 +311,11 @@
     <Content Include="Views\Schedules\Details.cshtml" />
     <Content Include="Views\Schedules\Edit.cshtml" />
     <Content Include="Views\Schedules\Index.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Views\Invoices\Delete.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\Invoices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +345,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807302101553_mm.resx">
       <DependentUpon>201807302101553_mm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011442530_start and end column.resx">
+      <DependentUpon>201808011442530_start and end column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011457133_deleting start and end.resx">
+      <DependentUpon>201808011457133_deleting start and end.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011502413_added start and end to schedule.resx">
+      <DependentUpon>201808011502413_added start and end to schedule.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

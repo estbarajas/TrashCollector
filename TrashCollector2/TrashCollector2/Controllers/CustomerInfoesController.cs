@@ -16,11 +16,43 @@ namespace TrashCollector2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public UserManager<ApplicationUser> userManager;
 
-        // GET: CustomerInfoes
-        public ActionResult Index()
+        ////GET: CustomerInfoes
+        //public ActionResult Index()
+        //{
+
+        //    var customerInfoes = db.CustomerInfoes.Include(c => c.Invoice).Include(c => c.Schedule);
+        //    return View(customerInfoes.ToList());
+        //}
+
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            var customerInfoes = db.CustomerInfoes.Include(c => c.Invoice).Include(c => c.Schedule);
-            return View(customerInfoes.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var customers = from s in db.CustomerInfoes
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                int theNumber = Convert.ToInt32(searchString);
+                customers = customers.Where(s => s.ZipCode == theNumber);
+                                       //|| s.FirstMidName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    //students = students.OrderByDescending(s => s.LastName);
+                    break;
+                case "Date":
+                    customers = customers.OrderBy(s => s.ZipCode);
+                    break;
+                case "date_desc":
+                    //students = students.OrderByDescending(s => s.EnrollmentDate);
+                    break;
+                default:
+                    //students = students.OrderBy(s => s.LastName);
+                    break;
+            }
+
+            return View(customers.ToList());
         }
 
         // GET: CustomerInfoes/Details/5
@@ -61,6 +93,9 @@ namespace TrashCollector2.Controllers
             {
                 Schedule schedule = new Schedule();
                 Invoice invoice = new Invoice();
+
+                invoice.Status = "pending";
+                invoice.AmountDue = 50;
 
                 string currentUserId = User.Identity.GetUserId();
                 ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);

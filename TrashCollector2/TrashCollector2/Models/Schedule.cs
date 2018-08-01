@@ -15,6 +15,8 @@ namespace TrashCollector2.Models
         public string NormalDayPickUp { get; set; }
         public IEnumerable<SelectListItem> NormalDayPickUps { get; set; }
 
+        public string Start { get; set; }
+        public string End { get; set; }
 
         [Display(Name = "Extra Date PickUp")]
         public string ExtraDatePickUp { get; set; }
