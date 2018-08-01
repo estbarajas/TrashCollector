@@ -35,5 +35,9 @@ namespace TrashCollector2.Models
         public System.Data.Entity.DbSet<TrashCollector2.Models.Invoice> Invoices { get; set; }
 
         public System.Data.Entity.DbSet<TrashCollector2.Models.Schedule> Schedules { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector2.Models.EmployeeInfo> EmployeeInfoes { get; set; }
+
+        //public System.Data.Entity.DbSet<TrashCollector2.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

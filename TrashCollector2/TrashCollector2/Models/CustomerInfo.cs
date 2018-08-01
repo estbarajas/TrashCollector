@@ -48,5 +48,8 @@ namespace TrashCollector2.Models
         public Invoice Invoice { get; set; }
 
         public IEnumerable<Invoice> Invoices { get; set; }
+
+        [Display(Name = "PickUp Status")]
+        public string PickupStatus { get; set; }
     }
 }

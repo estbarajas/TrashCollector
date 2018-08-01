@@ -30,10 +30,18 @@ namespace TrashCollector2.Controllers
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var customers = from s in db.CustomerInfoes
                            select s;
-            if (!String.IsNullOrEmpty(searchString))
+
+            string currUser = User.Identity.GetUserId();
+            var employee = db.EmployeeInfoes.Where(c => c.UserId.Equals(currUser)).Single();
+            
+            //int theNumber = Convert.ToInt32(searchString);
+            int theZipCode = employee.ZipCode;
+            customers = customers.Where(s => s.ZipCode == theZipCode);
+            
+
+            if (!String.IsNullOrEmpty(searchString)) //use this for day and bottom code run all time for zipcode
             {
-                int theNumber = Convert.ToInt32(searchString);
-                customers = customers.Where(s => s.ZipCode == theNumber);
+                customers = customers.Where(s => s.Schedule.NormalDayPickUp.Contains(searchString));
                                        //|| s.FirstMidName.Contains(searchString));
             }
             switch (sortOrder)
@@ -141,7 +149,7 @@ namespace TrashCollector2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,Address,ZipCode,ScheduleId,InvoiceId")] CustomerInfo customerInfo)
+        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,Address,ZipCode,PickupStatus,ScheduleId,InvoiceId")] CustomerInfo customerInfo)
         {
             if (ModelState.IsValid)
             {

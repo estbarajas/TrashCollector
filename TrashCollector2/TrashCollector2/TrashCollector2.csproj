@@ -196,6 +196,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerInfoesController.cs" />
+    <Compile Include="Controllers\EmployeeInfoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -230,6 +231,26 @@
     <Compile Include="Migrations\201808011502413_added start and end to schedule.cs" />
     <Compile Include="Migrations\201808011502413_added start and end to schedule.Designer.cs">
       <DependentUpon>201808011502413_added start and end to schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011819199_adding employees.cs" />
+    <Compile Include="Migrations\201808011819199_adding employees.Designer.cs">
+      <DependentUpon>201808011819199_adding employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011827403_deletd app uers.cs" />
+    <Compile Include="Migrations\201808011827403_deletd app uers.Designer.cs">
+      <DependentUpon>201808011827403_deletd app uers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808011949084_pickup status.cs" />
+    <Compile Include="Migrations\201808011949084_pickup status.Designer.cs">
+      <DependentUpon>201808011949084_pickup status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808012007596_Added confirmed payment.cs" />
+    <Compile Include="Migrations\201808012007596_Added confirmed payment.Designer.cs">
+      <DependentUpon>201808012007596_Added confirmed payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808012027163_added pickupstatus to cutomer.cs" />
+    <Compile Include="Migrations\201808012027163_added pickupstatus to cutomer.Designer.cs">
+      <DependentUpon>201808012027163_added pickupstatus to cutomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -316,6 +337,11 @@
     <Content Include="Views\Invoices\Details.cshtml" />
     <Content Include="Views\Invoices\Edit.cshtml" />
     <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Create.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Delete.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Details.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Edit.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +380,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808011502413_added start and end to schedule.resx">
       <DependentUpon>201808011502413_added start and end to schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011819199_adding employees.resx">
+      <DependentUpon>201808011819199_adding employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011827403_deletd app uers.resx">
+      <DependentUpon>201808011827403_deletd app uers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011949084_pickup status.resx">
+      <DependentUpon>201808011949084_pickup status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808012007596_Added confirmed payment.resx">
+      <DependentUpon>201808012007596_Added confirmed payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808012027163_added pickupstatus to cutomer.resx">
+      <DependentUpon>201808012027163_added pickupstatus to cutomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
