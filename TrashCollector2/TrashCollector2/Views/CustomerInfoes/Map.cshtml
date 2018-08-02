@@ -1,0 +1,36 @@
+﻿@{ 
+
+}
+<head>
+
+    <title>
+        Google Maps
+    </title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    
+</head>
+
+<div>
+    <div id="map" style="width:800px; height:500px;"></div>
+    <div><h2>map</h2></div>
+</div>
+
+<script>
+    var Liverpool = new google.maps.LatLng(53.408841, -2.981397); 
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: Liverpool,
+        mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP  
+    });
+
+    var myLatlng = new google.maps.LatLng(53.40091, -2.994464);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'My Marker'
+    });   
+</script>
+
+
+
+
